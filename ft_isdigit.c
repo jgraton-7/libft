@@ -6,18 +6,17 @@
 /*   By: jgraton- <jgraton-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 20:37:30 by jgraton-          #+#    #+#             */
-/*   Updated: 2021/02/09 21:25:26 by jgraton-         ###   ########.fr       */
+/*   Updated: 2021/02/12 17:42:17 by jgraton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
 int ft_isdigit( int arg)
 {
 	if(arg >= 48 && arg <= 57)
 	{
-		return(2048);
+		return(1);
 	}
 	else
 	{

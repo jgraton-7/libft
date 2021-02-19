@@ -6,16 +6,15 @@
 /*   By: jgraton- <jgraton-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 01:37:25 by jgraton-          #+#    #+#             */
-/*   Updated: 2021/02/08 16:04:35 by jgraton-         ###   ########.fr       */
+/*   Updated: 2021/02/11 18:14:30 by jgraton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 void *ft_memcpy(void *dest, const void *src, size_t n)
 {
-	int count;
+	size_t count;
 
 	count = 0;
 	while(count < n)

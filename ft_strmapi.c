@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgraton- <jgraton-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/08 20:00:43 by jgraton-          #+#    #+#             */
-/*   Updated: 2021/02/11 18:17:25 by jgraton-         ###   ########.fr       */
+/*   Created: 2021/02/15 19:09:53 by jgraton-          #+#    #+#             */
+/*   Updated: 2021/02/15 19:57:20 by jgraton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
+	char *cpy;
 	int count;
 
 	count = 0;
+	if(!s)
+		return(NULL);
+	if(!(cpy = ft_strdup(s)))
+	{
+		return(NULL);
+	}
 	while(s[count])
 	{
+		cpy[count] = f(count,s[count]);
 		count++;
 	}
-	while(count >= 0)
-	{
-		if(s[count] == (char)c)
-		{
-			return((char *)s + count);
-		}
-	count--;
-	}
-	return (0);
+	return(cpy);
 }
-

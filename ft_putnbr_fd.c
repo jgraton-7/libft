@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgraton- <jgraton-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/08 20:00:43 by jgraton-          #+#    #+#             */
-/*   Updated: 2021/02/11 18:17:25 by jgraton-         ###   ########.fr       */
+/*   Created: 2021/02/15 21:25:16 by jgraton-          #+#    #+#             */
+/*   Updated: 2021/02/18 20:03:43 by jgraton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
-char *ft_strrchr(const char *s, int c)
+void ft_putnbr_fd(int n, int fd)
 {
-	int count;
+	char *str;
+	int c;
 
-	count = 0;
-	while(s[count])
-	{
-		count++;
-	}
-	while(count >= 0)
-	{
-		if(s[count] == (char)c)
-		{
-			return((char *)s + count);
-		}
-	count--;
-	}
-	return (0);
+	str = ft_itoa(n);
+	c = ft_strlen(str);
+	write(fd, str, c);
 }
-

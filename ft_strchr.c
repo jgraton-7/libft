@@ -6,34 +6,34 @@
 /*   By: jgraton- <jgraton-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 18:19:58 by jgraton-          #+#    #+#             */
-/*   Updated: 2021/02/08 20:00:01 by jgraton-         ###   ########.fr       */
+/*   Updated: 2021/02/12 22:38:53 by jgraton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 char *ft_strchr(const char *s, int c)
 {
-	while(*s)
+	int count;
+
+	count = 0;
+	if(!s)
 	{
-		if(*s == (char)c)
+		return(NULL);
+	}
+	while(s[count])
+	{
+		if(s[count] == (char)c)
 		{
-			return((char *)s);
+			return((char*)s + count);
 		}
-		s++;
+		count++;
+	}
+	if(s[count] == (char)c)
+	{
+		return((char*)s+count);
 	}
 	return (0);
 }
 
-int main () {
-   const char str[] = "http://www.tutorialspoint.com";
-   const char ch = '/';
-   char *ret;
 
-   ret = ft_strchr(str, ch);
-
-   printf("String after |%c| is - |%s|\n", ch, ret);
-
-   return(0);
-}

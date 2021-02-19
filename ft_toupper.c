@@ -6,12 +6,11 @@
 /*   By: jgraton- <jgraton-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 16:53:28 by jgraton-          #+#    #+#             */
-/*   Updated: 2021/02/10 17:23:04 by jgraton-         ###   ########.fr       */
+/*   Updated: 2021/02/11 18:17:31 by jgraton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
 int ft_toupper(int c)
 {

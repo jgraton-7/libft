@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgraton- <jgraton-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/08 20:00:43 by jgraton-          #+#    #+#             */
-/*   Updated: 2021/02/11 18:17:25 by jgraton-         ###   ########.fr       */
+/*   Created: 2021/02/15 20:30:15 by jgraton-          #+#    #+#             */
+/*   Updated: 2021/02/15 20:50:14 by jgraton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
-char *ft_strrchr(const char *s, int c)
+void ft_putstr_fd(char *s, int fd)
 {
 	int count;
 
 	count = 0;
-	while(s[count])
+	while(s[count] != 0)
 	{
+		write(fd, &s[count], 1);
 		count++;
 	}
-	while(count >= 0)
-	{
-		if(s[count] == (char)c)
-		{
-			return((char *)s + count);
-		}
-	count--;
-	}
-	return (0);
 }
-

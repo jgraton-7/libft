@@ -6,12 +6,11 @@
 /*   By: jgraton- <jgraton-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 23:54:44 by jgraton-          #+#    #+#             */
-/*   Updated: 2021/02/10 16:46:53 by jgraton-         ###   ########.fr       */
+/*   Updated: 2021/02/11 18:13:59 by jgraton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 int ft_isascii(int c)
 {

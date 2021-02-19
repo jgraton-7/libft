@@ -6,12 +6,11 @@
 /*   By: jgraton- <jgraton-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 19:32:06 by jgraton-          #+#    #+#             */
-/*   Updated: 2021/02/09 17:01:58 by jgraton-         ###   ########.fr       */
+/*   Updated: 2021/02/11 18:14:27 by jgraton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -27,6 +26,5 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 		coun++;
 	}
 	return (0);
-
 }
 

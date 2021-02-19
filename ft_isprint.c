@@ -6,12 +6,11 @@
 /*   By: jgraton- <jgraton-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 16:41:04 by jgraton-          #+#    #+#             */
-/*   Updated: 2021/02/10 16:51:44 by jgraton-         ###   ########.fr       */
+/*   Updated: 2021/02/11 18:14:05 by jgraton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
-#include <stdio.h>
+#include "libft.h"
 
 int ft_isprint( int c )
 {

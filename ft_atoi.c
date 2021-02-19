@@ -6,42 +6,36 @@
 /*   By: jgraton- <jgraton-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 17:28:09 by jgraton-          #+#    #+#             */
-/*   Updated: 2021/02/09 19:35:07 by jgraton-         ###   ########.fr       */
+/*   Updated: 2021/02/16 20:46:52 by jgraton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
-int ft_atoi(const char *nptr)
+int ft_atoi(const char *str)
 {
 	int count;
+	int res;
+	int neg;
 
+	if(!str)
+		return(0);
 	count = 0;
-	while(nptr[count] != '\0')
+	while(str[count] == ' ' || str[count] == '\t' || str[count] == '\n'
+	|| str[count] == '\v' || str[count] == '\f' || str[count] == '\r')
+		count++;
+	if(str[count] == '-')
+		neg = -1;
+	else
+		neg = 1;
+	if(neg == -1 || str[count] == '+')
+		count++;
+	res = 0;
+	while(ft_isdigit(str[count]))
 	{
-		if( 48 > nptr[count] && nptr[count] > 57 )
-		{
-			return((int)(nptr - count) -'0');
-		}
-		else
-		{
-			return((int)(nptr - '0'));
-		}
+		res = (res*10)+(str[count]-'0');
 		count++;
 	}
-	return(0);
-}
-
-
-int main (void) {
-   int val;
-   char str[20] = "123";
-
-   val = ft_atoi(str);
-   printf("String value = %s, Int value = %d\n", str, val);
-
-
-   return(0);
+	res = res * neg;
+	return(res);
 }

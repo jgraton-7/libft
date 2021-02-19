@@ -6,12 +6,11 @@
 /*   By: jgraton- <jgraton-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 17:23:38 by jgraton-          #+#    #+#             */
-/*   Updated: 2021/02/10 17:27:59 by jgraton-         ###   ########.fr       */
+/*   Updated: 2021/02/11 18:17:28 by jgraton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
 int ft_tolower(int c)
 {

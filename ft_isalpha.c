@@ -6,27 +6,25 @@
 /*   By: jgraton- <jgraton-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 19:59:29 by jgraton-          #+#    #+#             */
-/*   Updated: 2021/02/09 20:34:30 by jgraton-         ###   ########.fr       */
+/*   Updated: 2021/02/12 17:10:28 by jgraton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
 int ft_isalpha(int character)
 {
-	if(character >= 56 && character <= 90)
+	if(character >= 'a' && character <= 'z')
 	{
-		return(1024);
+		return(1);
 	}
-	else if(character >= 97 && character <= 122)
+	else if(character >= 'A' && character <= 'Z')
 	{
-		return(1024);
+		return(1);
 	}
 	else
 	{
 		return (0);
 	}
-	return(0);
 }
 

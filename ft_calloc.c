@@ -6,19 +6,21 @@
 /*   By: jgraton- <jgraton-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 19:57:49 by jgraton-          #+#    #+#             */
-/*   Updated: 2021/02/10 23:50:41 by jgraton-         ###   ########.fr       */
+/*   Updated: 2021/02/12 22:49:03 by jgraton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 #include <stdlib.h>
 
-void *ft_calloc(size_t nmemb, size_t size)
+void *ft_calloc(size_t nmem, size_t size)
 {
-	void *a;
-
-	a = malloc(nmemb * size);
-	return(a);
+	void *str;
+	str = (void*)malloc(nmem * size);
+	if(!str)
+	{
+		return(NULL);
+	}
+	ft_bzero(str, nmem);
+	return(str);
 }
-
-
