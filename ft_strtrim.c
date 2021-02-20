@@ -6,7 +6,7 @@
 /*   By: jgraton- <jgraton-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 21:52:37 by jgraton-          #+#    #+#             */
-/*   Updated: 2021/02/15 18:27:37 by jgraton-         ###   ########.fr       */
+/*   Updated: 2021/02/19 18:09:31 by jgraton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,9 @@ char *ft_strtrim(char const *s1, char const *set)
 	while(s1[count_start] && check_in_set(s1[count_start], set))
 		count_start++;
 	count_end = ft_strlen(s1);
-	//tirar -1 do end -'\0'
 	while(count_end > count_start && check_in_set(s1[count_end - 1], set))
 		count_end--;
-	cpy = malloc(sizeof(s1)*(count_end - count_start - 1));
+	cpy = malloc(sizeof(s1)*(count_end - count_start + 1));
 	if(!cpy)
 		return(NULL);
 	count = 0;

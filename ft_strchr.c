@@ -6,34 +6,32 @@
 /*   By: jgraton- <jgraton-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 18:19:58 by jgraton-          #+#    #+#             */
-/*   Updated: 2021/02/12 22:38:53 by jgraton-         ###   ########.fr       */
+/*   Updated: 2021/02/19 22:56:56 by jgraton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	int count;
 
 	count = 0;
-	if(!s)
+	if (!s)
 	{
-		return(NULL);
+		return (NULL);
 	}
-	while(s[count])
+	while (s[count])
 	{
-		if(s[count] == (char)c)
+		if (s[count] == (char)c)
 		{
-			return((char*)s + count);
+			return ((char*)s + count);
 		}
 		count++;
 	}
-	if(s[count] == (char)c)
+	if (s[count] == (char)c)
 	{
-		return((char*)s+count);
+		return ((char*)s + count);
 	}
 	return (0);
 }
-
-

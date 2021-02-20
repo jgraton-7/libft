@@ -6,44 +6,44 @@
 /*   By: jgraton- <jgraton-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 15:21:08 by jgraton-          #+#    #+#             */
-/*   Updated: 2021/02/18 21:09:56 by jgraton-         ###   ########.fr       */
+/*   Updated: 2021/02/19 22:31:52 by jgraton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int valor(int num)
+static int	valor(int num)
 {
 	int neg;
 
 	neg = 0;
-	if(num < 0)
+	if (num < 0)
 	{
 		neg = 1;
 	}
-	return(neg);
+	return (neg);
 }
 
-static int digits(int n)
+static int	digits(int n)
 {
 	int c;
 
 	c = 0;
-	if(n < 0)
+	if (n < 0)
 		c++;
-	while(n)
+	while (n)
 	{
 		c++;
 		n /= 10;
 	}
-	return(c);
+	return (c);
 }
 
-static char *my_spl(int n, int c2, char *str)
+static char	*my_spl(int n, int c2, char *str)
 {
-	if(n == 0)
+	if (n == 0)
 		str[0] = '0';
-	if(n < 0)
+	if (n < 0)
 	{
 		str[0] = '-';
 		if (n == -2147483648)
@@ -53,23 +53,23 @@ static char *my_spl(int n, int c2, char *str)
 		}
 		n = -n;
 	}
-	while(n != 0 && c2 >= 0)
+	while (n != 0 && c2 >= 0)
 	{
-		str[c2-- -1] = n % 10 + '0';
+		str[c2-- - 1] = n % 10 + '0';
 		n = n / 10;
 	}
-	return(str);
+	return (str);
 }
 
-char *ft_itoa(int n)
+char		*ft_itoa(int n)
 {
-	char *str;
-	int c2;
+	char	*str;
+	int		c2;
 
 	c2 = digits(n);
-	if(!(str = ft_calloc(11+valor(n),sizeof(*str))))
-		return(0);
+	if (!(str = ft_calloc(11 + valor(n), sizeof(*str))))
+		return (0);
 	str[c2] = '\0';
 	my_spl(n, c2, str);
-	return(str);
+	return (str);
 }

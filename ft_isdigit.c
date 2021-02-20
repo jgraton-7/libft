@@ -6,22 +6,21 @@
 /*   By: jgraton- <jgraton-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 20:37:30 by jgraton-          #+#    #+#             */
-/*   Updated: 2021/02/12 17:42:17 by jgraton-         ###   ########.fr       */
+/*   Updated: 2021/02/19 22:21:14 by jgraton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isdigit( int arg)
+int	ft_isdigit(int arg)
 {
-	if(arg >= 48 && arg <= 57)
+	if (arg >= 48 && arg <= 57)
 	{
-		return(1);
+		return (1);
 	}
 	else
 	{
-		return(0);
+		return (0);
 	}
-	return(0);
+	return (0);
 }
-
