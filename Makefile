@@ -33,13 +33,15 @@ SRC = 	ft_bzero.c 			\
 		ft_atoi.c			\
 		ft_putnbr_fd.c		\
 		ft_itoa.c			\
+		ft_strjoin.c		\
+		ft_split.c			\
 
 
 OBJS = $(SRC:.c=.o)
 
 LIB = libft.h
 
-CFLAGS		= -Werror -Wall -Wextra
+CFLAGS		= -Werror -Wall -Wextra -c
 
 all: $(NAME)
 
@@ -55,7 +57,6 @@ fclean: clean
 
 re: fclean all
 
-so:	so
-	$(CC)-fPIC $(CFLAGS) $(SRC)
-	gcc -shared -o libft.so $(OBJ)
-
+so:
+	gcc -fPIC $(CFLAGS) $(SRC)
+	gcc -shared -o libft.so $(OBJS)

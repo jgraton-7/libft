@@ -6,7 +6,7 @@
 /*   By: jgraton- <jgraton-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 20:59:25 by jgraton-          #+#    #+#             */
-/*   Updated: 2021/02/19 22:57:53 by jgraton-         ###   ########.fr       */
+/*   Updated: 2021/02/22 19:24:59 by jgraton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,9 @@ char	*ft_strdup(const char *s)
 
 	count = 0;
 	if (!s)
-	{
 		return (0);
-	}
-	cpy = (char *)malloc(sizeof(*s) * ft_strlen(s) + 1);
-	if (!cpy)
-	{
+	if(!(cpy = (char *)malloc(sizeof(*s) * ft_strlen(s) + 1)))
 		return (0);
-	}
 	while (s[count])
 	{
 		cpy[count] = s[count];
