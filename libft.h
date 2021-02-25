@@ -6,14 +6,23 @@
 /*   By: jgraton- <jgraton-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 01:27:26 by jgraton-          #+#    #+#             */
-/*   Updated: 2021/02/19 21:50:21 by jgraton-         ###   ########.fr       */
+/*   Updated: 2021/02/23 15:29:47 by jgraton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <string.h>
 
+# include <string.h>
+# include <stdlib.h>
+# include <unistd.h>
+
+
+typedef	struct	s_list
+{
+	void			*content;
+	struct s_list	*next;
+}				t_list;
 
 int		ft_atoi(const char *nptr);
 
@@ -82,5 +91,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 
 void	ft_putnbr_fd(int n, int fd);
+
+t_list	*ft_lstnew(void *content);
 
 #endif

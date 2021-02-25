@@ -36,8 +36,11 @@ SRC = 	ft_bzero.c 			\
 		ft_strjoin.c		\
 		ft_split.c			\
 
+SRC_BONUS = ft_lstnew.c		\
 
 OBJS = $(SRC:.c=.o)
+
+OBJS_BONUS = $(SRC_BONUS:.c=.o)
 
 LIB = libft.h
 
@@ -46,9 +49,14 @@ CFLAGS		= -Werror -Wall -Wextra -c
 all: $(NAME)
 
 $(NAME):
-	gcc -c $(CFLAGS) $(LIB) $(SRC)
+	gcc $(CFLAGS) $(LIB) $(SRC)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
+
+bonus: $(OBJS) $(OBJS_BONUS)
+		gcc $(CFLAGS) $(LIB) $(SRC_BONUS)
+		ar rc $(NAME) $(OBJS_BONUS) $(OBJS)
+
 clean:
 	/bin/rm -f $(OBJS)
 
