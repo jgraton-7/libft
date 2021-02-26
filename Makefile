@@ -37,6 +37,14 @@ SRC = 	ft_bzero.c 			\
 		ft_split.c			\
 
 SRC_BONUS = ft_lstnew.c		\
+		ft_lstadd_front.c	\
+		ft_lstsize.c		\
+		ft_lstlast.c		\
+		ft_lstadd_back.c	\
+		ft_lstdelone.c		\
+		ft_lstiter.c		\
+		#ft_lstmap.c		\
+		#ft_lstclear.c		\
 
 OBJS = $(SRC:.c=.o)
 
@@ -58,7 +66,7 @@ bonus: $(OBJS) $(OBJS_BONUS)
 		ar rc $(NAME) $(OBJS_BONUS) $(OBJS)
 
 clean:
-	/bin/rm -f $(OBJS)
+	/bin/rm -f $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
 	/bin/rm -f $(NAME)
