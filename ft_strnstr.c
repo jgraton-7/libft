@@ -6,7 +6,7 @@
 /*   By: jgraton- <jgraton-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 20:40:32 by jgraton-          #+#    #+#             */
-/*   Updated: 2021/02/19 23:06:42 by jgraton-         ###   ########.fr       */
+/*   Updated: 2021/03/01 13:51:34 by jgraton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strnstr(const char *big, const char *small, size_t len)
 	size_t	count2;
 
 	count = 0;
-	if (!big || !small)
+	if (!big && !small)
 		return (NULL);
 	if (!small[0])
 		return ((char*)big);

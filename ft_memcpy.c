@@ -6,7 +6,7 @@
 /*   By: jgraton- <jgraton-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 01:37:25 by jgraton-          #+#    #+#             */
-/*   Updated: 2021/02/20 14:23:50 by jgraton-         ###   ########.fr       */
+/*   Updated: 2021/03/01 13:20:38 by jgraton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t count;
 
+	if(!dest && !src)
+		return(NULL);
 	count = 0;
-	if(!dest)
-		return (NULL);
 	while (count < n)
 	{
 		((unsigned char *)dest)[count] = ((unsigned char *)src)[count];
