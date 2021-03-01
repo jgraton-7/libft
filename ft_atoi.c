@@ -6,7 +6,7 @@
 /*   By: jgraton- <jgraton-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 17:28:09 by jgraton-          #+#    #+#             */
-/*   Updated: 2021/02/22 20:09:09 by jgraton-         ###   ########.fr       */
+/*   Updated: 2021/03/01 17:32:12 by jgraton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ int	ft_atoi(const char *str)
 	int res;
 	int neg;
 
-	if (!str)
-		return (0);
 	count = 0;
 	while (str[count] == ' ' || str[count] == '\t' || str[count] == '\n'
 	|| str[count] == '\v' || str[count] == '\f' || str[count] == '\r')
