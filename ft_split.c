@@ -21,13 +21,15 @@ static    int alloc(char const *s, char c)
 
     count = 0;
     sep = 0;
+	if(!s)
+		return (0);
 	tmp = ft_strtrim(s, &c);
-	if(*tmp == '\0')
+	if (*tmp == '\0')
 		return (0);
 	s = tmp;
-	while(s[count] != '\0')
+	while (s[count] != '\0')
     {
-        if(s[count] == c)
+        if (s[count] == c)
         {
 			sep++;
 			while(s[count] == c)
@@ -43,6 +45,8 @@ static    int alloc(char const *s, char c)
 
 static const char *alloc2(char const *s, char c)
 {
+	if(!s)
+		return (NULL);
 	while(*s == c && *s != 0)
 	{
 		s++;
@@ -58,9 +62,9 @@ char	**ft_split(char const *s, char c)
 	int c2;
 	int c3;
 
-	pts = s;
 	if (!s)
 		return (0);
+	pts = s;
 	c1 = alloc(pts, c);
 	if (!(str = (char **)malloc(sizeof(char*) * (c1 + 1))))
 		return (0);
@@ -69,11 +73,8 @@ char	**ft_split(char const *s, char c)
 	{
 		c3 = 0;
 		pts = alloc2(pts,c);
-		while(*pts != c && *pts != 0)
-		{
-			c3++;
+		while(*pts != c && *pts != 0 && c3++ >= 0)
 			pts++;
-		}
 		if(!(str[c2] = (char *)malloc(sizeof(char) * c3 + 1)))
 			return (NULL);
 		ft_strlcpy(str[c2++], pts - c3, c3 + 1);

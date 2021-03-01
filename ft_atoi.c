@@ -28,9 +28,11 @@ int	ft_atoi(const char *str)
 		neg = -1;
 	else
 		neg = 1;
-	if (neg == -1 || str[count] == '+')
+	if (str[count] == '-' || str[count] == '+')
 		count++;
 	res = 0;
+	while(str[count] == ' ')
+		count++;
 	while (ft_isdigit(str[count]))
 	{
 		res = (res * 10) + (str[count] - '0');
