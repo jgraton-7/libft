@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jgraton- <jgraton-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 15:02:14 by jgraton-          #+#    #+#             */
-/*   Updated: 2021/03/01 18:12:34 by jgraton-         ###   ########.fr       */
+/*   Updated: 2021/03/03 22:41:39 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include  "libft.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 static    int alloc(char const *s, char c)
 {
@@ -24,7 +25,7 @@ static    int alloc(char const *s, char c)
 	if(!s)
 		return (0);
 	tmp = ft_strtrim(s, &c);
-	if (*tmp == '\0')
+	if (!tmp)
 		return (0);
 	s = tmp;
 	while (s[count] != '\0')
@@ -35,12 +36,11 @@ static    int alloc(char const *s, char c)
 			while(s[count] == c)
 				count++;
 		}
-        else
+		else
 			count++;
     }
-    sep++;
 	free(tmp);
-    return(sep);
+    return(sep + 1);
 }
 
 static const char *alloc2(char const *s, char c)
@@ -62,7 +62,7 @@ char	**ft_split(char const *s, char c)
 	int c2;
 	int c3;
 
-	if (!s)
+	if (!s || (!s && !c))
 		return (0);
 	pts = s;
 	c1 = alloc(pts, c);
@@ -76,7 +76,7 @@ char	**ft_split(char const *s, char c)
 		while(*pts != c && *pts != 0 && c3++ >= 0)
 			pts++;
 		if(!(str[c2] = (char *)malloc(sizeof(char) * c3 + 1)))
-			return (NULL);
+			return(0);
 		ft_strlcpy(str[c2++], pts - c3, c3 + 1);
 	}
 	str[c1] = NULL;
