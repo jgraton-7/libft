@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 15:02:14 by jgraton-          #+#    #+#             */
-/*   Updated: 2021/03/05 15:45:51 by user42           ###   ########.fr       */
+/*   Updated: 2021/03/05 16:20:02 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-static	int			alloc(char const *s, char c)
+static int			count_sep(char const *s, char c)
 {
-	int		count;
-	int		sep;
-	char	*tmp;
+	int count;
+	int sep;
 
-	count = 0;
 	sep = 0;
-	if (!s)
-		return (0);
-	tmp = ft_strtrim(s, &c);
-	if (*tmp == '\0' || !tmp)
-		return (0);
-	s = tmp;
+	count = 0;
 	while (s[count] != '\0')
 	{
 		if (s[count] == c)
@@ -39,6 +32,22 @@ static	int			alloc(char const *s, char c)
 		else
 			count++;
 	}
+	return (sep);
+}
+
+static	int			alloc(char const *s, char c)
+{
+	int		sep;
+	char	*tmp;
+
+	sep = 0;
+	if (!s)
+		return (0);
+	tmp = ft_strtrim(s, &c);
+	if (*tmp == '\0' || !tmp)
+		return (0);
+	s = tmp;
+	sep = count_sep(s, c);
 	free(tmp);
 	return (sep + 1);
 }
