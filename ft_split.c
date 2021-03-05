@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 15:02:14 by jgraton-          #+#    #+#             */
-/*   Updated: 2021/03/05 16:20:02 by user42           ###   ########.fr       */
+/*   Updated: 2021/03/05 12:28:16 by jgraton-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,10 @@ static	int			alloc(char const *s, char c)
 		return (0);
 	tmp = ft_strtrim(s, &c);
 	if (*tmp == '\0' || !tmp)
+	{
+		free(tmp);
 		return (0);
+	}
 	s = tmp;
 	sep = count_sep(s, c);
 	free(tmp);
